@@ -1,0 +1,143 @@
+{
+  "total_visitors": 12500,
+  "revenue": 4500000,
+  "popular_sites": [
+    {
+      "id": 1,
+      "name": "Dassam Falls",
+      "visitors": 3200,
+      "rating": 4.8,
+      "location": "Near Ranchi",
+      "type": "waterfall"
+    },
+    {
+      "id": 2,
+      "name": "Jagannath Temple",
+      "visitors": 2800,
+      "rating": 4.6,
+      "location": "Ranchi",
+      "type": "temple"
+    },
+    {
+      "id": 3,
+      "name": "Betla National Park",
+      "visitors": 2500,
+      "rating": 4.7,
+      "location": "Latehar District",
+      "type": "wildlife"
+    },
+    {
+      "id": 4,
+      "name": "Hundru Falls",
+      "visitors": 1800,
+      "rating": 4.5,
+      "location": "Ranchi District",
+      "type": "waterfall"
+    },
+    {
+      "id": 5,
+      "name": "Jonha Falls",
+      "visitors": 1500,
+      "rating": 4.4,
+      "location": "Ranchi District",
+      "type": "waterfall"
+    }
+  ],
+  "visitor_demographics": {
+    "domestic": 85,
+    "international": 15,
+    "age_groups": {
+      "18-25": 25,
+      "26-35": 40,
+      "36-45": 20,
+      "46+": 15
+    },
+    "regions": {
+      "north_india": 35,
+      "south_india": 25,
+      "east_india": 20,
+      "west_india": 15,
+      "international": 5
+    }
+  },
+  "monthly_trends": {
+    "january": 1200,
+    "february": 1100,
+    "march": 1300,
+    "april": 1400,
+    "may": 1000,
+    "june": 800,
+    "july": 900,
+    "august": 1100,
+    "september": 1200,
+    "october": 1500,
+    "november": 1600,
+    "december": 1400
+  },
+  "feedback_samples": [
+    {
+      "id": 1,
+      "user": "Tourist123",
+      "rating": 5,
+      "comment": "Amazing experience! The tour guide was very knowledgeable about local culture and heritage. The waterfalls were breathtaking.",
+      "category": "guide",
+      "date": "2024-01-15",
+      "sentiment": "positive"
+    },
+    {
+      "id": 2,
+      "user": "Traveler456",
+      "rating": 4,
+      "comment": "Good service overall but the transportation could be improved. The destinations were beautiful though.",
+      "category": "transport",
+      "date": "2024-01-14",
+      "sentiment": "neutral"
+    },
+    {
+      "id": 3,
+      "user": "Visitor789",
+      "rating": 2,
+      "comment": "Disappointing accommodation. Not worth the price we paid. Expected better facilities.",
+      "category": "accommodation",
+      "date": "2024-01-13",
+      "sentiment": "negative"
+    },
+    {
+      "id": 4,
+      "user": "Explorer101",
+      "rating": 5,
+      "comment": "Fantastic platform! Easy to book tours and the local handicrafts marketplace is wonderful. Supporting local artisans feels great.",
+      "category": "platform",
+      "date": "2024-01-12",
+      "sentiment": "positive"
+    },
+    {
+      "id": 5,
+      "user": "Adventurer202",
+      "rating": 3,
+      "comment": "Average experience. Some sites were overcrowded. Guide was good but the itinerary could be better planned.",
+      "category": "general",
+      "date": "2024-01-11",
+      "sentiment": "neutral"
+    }
+  ],
+  "blockchain_data": {
+    "total_transactions": 1234,
+    "active_contracts": 15,
+    "gas_used": 24567890,
+    "network_status": "active",
+    "recent_blocks": 18000000
+  },
+  "marketplace_stats": {
+    "total_products": 500,
+    "total_orders": 1234,
+    "total_revenue": 1250000,
+    "top_categories": {
+      "handicraft": 45,
+      "textile": 25,
+      "jewelry": 15,
+      "organic": 10,
+      "art": 5
+    }
+  }
+}
