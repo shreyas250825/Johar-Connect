@@ -6,6 +6,7 @@ const LandingPage = () => {
   const [scrollY, setScrollY] = useState(0);
   const [isVisible, setIsVisible] = useState({});
   const statsRef = useRef(null);
+  const statsAnimatedRef = useRef(false);
   const [statsAnimated, setStatsAnimated] = useState(false);
 
   // Parallax scroll effect
@@ -24,7 +25,8 @@ const LandingPage = () => {
             setIsVisible(prev => ({ ...prev, [entry.target.id]: true }));
 
             // Trigger stats animation
-            if (entry.target.id === 'stats-section' && !statsAnimated) {
+            if (entry.target.id === 'stats-section' && !statsAnimatedRef.current) {
+              statsAnimatedRef.current = true;
               setStatsAnimated(true);
             }
           }

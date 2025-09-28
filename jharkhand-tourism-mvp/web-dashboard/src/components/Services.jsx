@@ -5,7 +5,6 @@ import Feedback from './Feedback';
 // Main Services Component
 const Services = () => {
   const [activeCategory, setActiveCategory] = useState('all');
-  const [selectedProvider, setSelectedProvider] = useState(null);
   const [activeTab, setActiveTab] = useState('overview');
 
   const serviceCategories = [
@@ -260,9 +259,8 @@ const Services = () => {
               </div>
 
               {/* Providers Grid */}
-              <Providers 
-                category={activeCategory} 
-                onSelectProvider={setSelectedProvider}
+              <Providers
+                category={activeCategory}
               />
             </div>
           )}
