@@ -1,15 +1,7 @@
-import React, { useState, useEffect } from 'react';
+ import React, { useState, useEffect } from 'react';
 
-const Marketplace = () => {
-  const [products, setProducts] = useState([]);
-  const [cart, setCart] = useState([]);
-  const [filter, setFilter] = useState('all');
-  const [loading, setLoading] = useState(true);
-  const [viewMode, setViewMode] = useState('grid'); // grid or list
-  const [searchQuery, setSearchQuery] = useState('');
-
-  // Mock products data (replace with actual API call)
-  const mockProducts = [
+// Mock products data (replace with actual API call)
+const mockProducts = [
     {
       id: 1,
       name: 'Tribal Dokra Art Horse',
@@ -89,6 +81,14 @@ const Marketplace = () => {
       verified: true
     }
   ];
+
+const Marketplace = () => {
+  const [products, setProducts] = useState([]);
+  const [cart, setCart] = useState([]);
+  const [filter, setFilter] = useState('all');
+  const [loading, setLoading] = useState(true);
+  const [viewMode, setViewMode] = useState('grid'); // grid or list
+  const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
     // Simulate API call

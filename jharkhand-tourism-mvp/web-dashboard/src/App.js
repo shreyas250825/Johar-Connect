@@ -12,7 +12,6 @@ import Contact from './components/Contact';
 import Ours from './components/Ours';
 import Login from './components/Login';
 import Register from './components/Register';
-import HundruVR from './components/HundruVR';
 
 // Auth Context
 const AuthContext = createContext();
@@ -67,7 +66,6 @@ function App() {
               <Route path="/ours" element={<Ours />} />
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
-              <Route path="/vr" element={<HundruVR />} />
             </Routes>
           </main>
           <Footer />

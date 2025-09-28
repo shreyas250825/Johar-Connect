@@ -22,7 +22,7 @@ const LandingPage = () => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setIsVisible(prev => ({ ...prev, [entry.target.id]: true }));
-            
+
             // Trigger stats animation
             if (entry.target.id === 'stats-section' && !statsAnimated) {
               setStatsAnimated(true);
@@ -38,7 +38,7 @@ const LandingPage = () => {
     sections.forEach(section => observer.observe(section));
 
     return () => observer.disconnect();
-  }, [statsAnimated]);
+  }, []);
 
   // Animated counter hook
   const useCounter = (end, duration = 2000) => {

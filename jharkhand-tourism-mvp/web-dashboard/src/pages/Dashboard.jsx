@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import HundruVR from '../components/HundruVR';
 
 // Mock Components (replace with your actual components)
 const Analytics = () => (

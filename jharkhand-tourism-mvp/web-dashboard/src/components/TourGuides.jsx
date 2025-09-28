@@ -141,7 +141,7 @@ const TourGuides = () => {
     };
 
     fetchGuides();
-  }, []);
+  }, [mockGuides]);
 
   const specializations = [
     { id: 'all', label: 'All Guides', icon: '👥', count: guides.length },
