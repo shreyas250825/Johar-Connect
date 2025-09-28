@@ -117,7 +117,7 @@ const GovernanceDashboard = () => {
 
 // BlockchainNetwork Component
 const BlockchainNetwork = () => {
-  const [blockchainData, setBlockchainData] = useState({
+  const [blockchainData] = useState({
     network: { status: 'Active', blockHeight: 15420, gasPrice: 25 },
     nodes: [
       { id: 1, type: 'Validator', address: '0x1234...abcd', status: 'online', latency: 45 },
