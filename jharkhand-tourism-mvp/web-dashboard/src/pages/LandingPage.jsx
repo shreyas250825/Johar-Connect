@@ -61,7 +61,7 @@ const LandingPage = () => {
       };
 
       requestAnimationFrame(animate);
-    }, [end, duration, statsAnimated]);
+    }, [end, duration]);
 
     return count;
   };
