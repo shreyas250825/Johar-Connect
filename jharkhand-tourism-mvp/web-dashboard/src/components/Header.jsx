@@ -14,7 +14,6 @@ const Header = () => {
   const isTourGuides = location.pathname === '/tour-guides';
   const isServices = location.pathname === '/services';
   const isBlockchainHub = location.pathname === '/blockchain-hub';
-  const isVR = location.pathname === '/vr';
   const isContact = location.pathname === '/contact';
   const isLogin = location.pathname === '/login';
   const isRegister = location.pathname === '/register';
@@ -34,6 +33,7 @@ const Header = () => {
     { name: 'Marketplace', to: '/marketplace' },
     { name: 'Tour Guides', to: '/tour-guides' },
     { name: 'Services', to: '/services' },
+    
     { name: 'Blockchain Hub', to: '/blockchain-hub' },
     { name: 'Contact', to: '/contact' }
   ];
@@ -51,14 +51,12 @@ const Header = () => {
     navigate('/');
   };
 
-  const hasBackground = isScrolled || isDashboard || isMarketplace || isTourGuides || isServices || isBlockchainHub || isVR || isContact || isLogin || isRegister;
+  const hasBackground = isScrolled || isDashboard || isMarketplace || isTourGuides || isServices || isBlockchainHub || isContact || isLogin || isRegister;
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isVR
-          ? 'bg-black/80 backdrop-blur-xl shadow-2xl border-b border-white/20'
-          : hasBackground
+        hasBackground
           ? 'bg-white/95 backdrop-blur-xl shadow-2xl border-b border-emerald-100'
           : 'bg-transparent'
       }`}
@@ -76,17 +74,17 @@ const Header = () => {
             </div>
             <div>
               <h1 className={`text-2xl font-bold transition-colors duration-300 ${
-                isVR ? 'text-white' : hasBackground ? 'text-gray-900' : 'text-white'
+                hasBackground ? 'text-gray-900' : 'text-white'
               }`}>
                 <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
                   Johar
                 </span>
-                <span className={isVR ? 'text-white' : hasBackground ? 'text-gray-900' : 'text-white'}>
+                <span className={hasBackground ? 'text-gray-900' : 'text-white'}>
                   {' '}Connect
                 </span>
               </h1>
               <p className={`text-xs transition-colors duration-300 ${
-                isVR ? 'text-white/70' : hasBackground ? 'text-gray-500' : 'text-emerald-200'
+                hasBackground ? 'text-gray-500' : 'text-emerald-200'
               }`}>
                 Discover Jharkhand
               </p>
@@ -100,9 +98,7 @@ const Header = () => {
                 key={index}
                 to={link.to}
                 className={`px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 hover:scale-105 ${
-                  isVR
-                    ? 'text-white/90 hover:text-white hover:bg-white/10 backdrop-blur-sm'
-                    : hasBackground
+                  hasBackground
                     ? 'text-gray-700 hover:text-emerald-600 hover:bg-emerald-50'
                     : 'text-white/90 hover:text-white hover:bg-white/10 backdrop-blur-sm'
                 }`}
@@ -117,7 +113,7 @@ const Header = () => {
             {user ? (
               <div className="flex items-center space-x-4">
                 <div className={`flex items-center space-x-3 px-4 py-2 rounded-xl ${
-                  isVR ? 'bg-black/20 border border-white/20' : hasBackground ? 'bg-gray-50' : 'bg-white/10 backdrop-blur-sm'
+                  hasBackground ? 'bg-gray-50' : 'bg-white/10 backdrop-blur-sm'
                 }`}>
                   <div className="w-8 h-8 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-full flex items-center justify-center">
                     <span className="text-white text-sm font-bold">
@@ -125,17 +121,15 @@ const Header = () => {
                     </span>
                   </div>
                   <span className={`text-sm font-medium ${
-                    isVR ? 'text-white' : hasBackground ? 'text-gray-700' : 'text-white'
+                    hasBackground ? 'text-gray-700' : 'text-white'
                   }`}>
-                    Welcome, {user.name || 'User'}
+                    User
                   </span>
                 </div>
                 <button
                   onClick={handleLogout}
                   className={`px-6 py-2.5 rounded-xl text-sm font-medium transition-all duration-300 hover:scale-105 ${
-                    isVR
-                      ? 'border-2 border-white text-white hover:bg-white hover:text-black'
-                      : hasBackground
+                    hasBackground
                       ? 'border-2 border-emerald-600 text-emerald-600 hover:bg-emerald-600 hover:text-white'
                       : 'border-2 border-white text-white hover:bg-white hover:text-emerald-900'
                   }`}
@@ -148,9 +142,7 @@ const Header = () => {
                 <button
                   onClick={handleRegister}
                   className={`px-6 py-2.5 rounded-xl text-sm font-medium transition-all duration-300 hover:scale-105 ${
-                    isVR
-                      ? 'border-2 border-white text-white hover:bg-white hover:text-black'
-                      : hasBackground
+                    hasBackground
                       ? 'border-2 border-emerald-600 text-emerald-600 hover:bg-emerald-600 hover:text-white'
                       : 'border-2 border-white text-white hover:bg-white hover:text-emerald-900'
                   }`}
@@ -171,9 +163,7 @@ const Header = () => {
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className={`lg:hidden p-2 rounded-xl transition-colors duration-300 ${
-              isVR
-                ? 'text-white hover:bg-white/10'
-                : hasBackground
+              hasBackground
                 ? 'text-gray-700 hover:bg-gray-100'
                 : 'text-white hover:bg-white/10'
             }`}
@@ -193,9 +183,7 @@ const Header = () => {
           isMobileMenuOpen ? 'max-h-screen pb-6' : 'max-h-0'
         }`}>
           <div className={`rounded-2xl p-6 mt-4 ${
-            isVR
-              ? 'bg-black/80 backdrop-blur-xl shadow-2xl border border-white/20'
-              : hasBackground
+            hasBackground
               ? 'bg-white shadow-xl border border-gray-100'
               : 'bg-white/10 backdrop-blur-xl'
           }`}>
@@ -205,9 +193,7 @@ const Header = () => {
                   key={index}
                   to={link.to}
                   className={`block px-4 py-3 rounded-xl text-sm font-medium transition-all duration-300 ${
-                    isVR
-                      ? 'text-white/90 hover:text-white hover:bg-white/10'
-                      : hasBackground
+                    hasBackground
                       ? 'text-gray-700 hover:text-emerald-600 hover:bg-emerald-50'
                       : 'text-white hover:bg-white/10'
                   }`}
@@ -218,11 +204,11 @@ const Header = () => {
               ))}
             </nav>
 
-            <div className="mt-6 pt-6 border-t" style={{ borderColor: isVR ? 'rgba(255,255,255,0.2)' : 'rgba(156,163,175,0.2)' }}>
+            <div className="mt-6 pt-6 border-t" style={{ borderColor: 'rgba(156,163,175,0.2)' }}>
               {user ? (
                 <div className="space-y-3">
                   <div className={`flex items-center space-x-3 px-4 py-3 rounded-xl ${
-                    isVR ? 'bg-black/20 border border-white/20' : hasBackground ? 'bg-gray-50' : 'bg-white/10'
+                    hasBackground ? 'bg-gray-50' : 'bg-white/10'
                   }`}>
                     <div className="w-10 h-10 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-full flex items-center justify-center">
                       <span className="text-white font-bold">
@@ -230,17 +216,15 @@ const Header = () => {
                       </span>
                     </div>
                     <span className={`font-medium ${
-                      isVR ? 'text-white' : hasBackground ? 'text-gray-700' : 'text-white'
+                      hasBackground ? 'text-gray-700' : 'text-white'
                     }`}>
-                      {user.name || 'User'}
+                      User
                     </span>
                   </div>
                   <button
                     onClick={handleLogout}
                     className={`w-full px-4 py-3 rounded-xl text-sm font-medium transition-all duration-300 ${
-                      isVR
-                        ? 'border-2 border-white text-white hover:bg-white hover:text-black'
-                        : hasBackground
+                      hasBackground
                         ? 'border-2 border-emerald-600 text-emerald-600 hover:bg-emerald-600 hover:text-white'
                         : 'border-2 border-white text-white hover:bg-white hover:text-emerald-900'
                     }`}
@@ -253,9 +237,7 @@ const Header = () => {
                   <button
                     onClick={handleRegister}
                     className={`w-full px-4 py-3 rounded-xl text-sm font-medium transition-all duration-300 ${
-                      isVR
-                        ? 'border-2 border-white text-white hover:bg-white hover:text-black'
-                        : hasBackground
+                      hasBackground
                         ? 'border-2 border-emerald-600 text-emerald-600 hover:bg-emerald-600 hover:text-white'
                         : 'border-2 border-white text-white hover:bg-white hover:text-emerald-900'
                     }`}

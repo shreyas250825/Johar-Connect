@@ -12,6 +12,8 @@ import Contact from './components/Contact';
 import Ours from './components/Ours';
 import Login from './components/Login';
 import Register from './components/Register';
+import VRView from './components/VRView';
+import HundruVR from './components/HundruVR';
 
 // Auth Context
 const AuthContext = createContext();
@@ -62,6 +64,8 @@ function App() {
               <Route path="/tour-guides" element={<TourGuides />} />
               <Route path="/services" element={<Services />} />
               <Route path="/blockchain-hub" element={<BlockchainHub />} />
+              <Route path="/vr" element={<VRView />} />
+              <Route path="/hundru-vr" element={<HundruVR />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/ours" element={<Ours />} />
               <Route path="/login" element={<Login />} />

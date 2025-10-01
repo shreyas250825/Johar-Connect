@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../App';
 
 const Login = () => {
+  const navigate = useNavigate();
+  const { login } = useAuth();
+
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -39,14 +44,20 @@ const Login = () => {
     // Simulate login
     setTimeout(() => {
       // Mock successful login
-      setFormStatus({ 
-        type: 'success', 
-        message: 'Login successful! Redirecting to your dashboard...' 
+      setFormStatus({
+        type: 'success',
+        message: 'Login successful! Redirecting to your dashboard...'
       });
-      
-      // Simulate redirect
+
+      // Set user in auth context and redirect
+      login({
+        name: 'Mock User',
+        email: formData.email,
+        userType: formData.userType
+      }, 'mock-jwt-token');
+
       setTimeout(() => {
-        console.log('Redirecting to dashboard...');
+        navigate('/dashboard');
       }, 2000);
     }, 2500);
   };

@@ -93,7 +93,7 @@ const VRView = () => {
   const navigate = useNavigate();
 
   const handleLaunchVR = () => {
-    navigate('/vr');
+    navigate('/hundru-vr');
   };
 
   return (
@@ -121,7 +121,7 @@ const VRView = () => {
 const Dashboard = () => {
   const [activeTab, setActiveTab] = useState('analytics');
   const [isLoading, setIsLoading] = useState(true);
-  const [user] = useState({ name: 'Arjun Kumar', role: 'Tourism Guide' }); // Mock user
+  const [user] = useState({ name: 'Shreyas', role: 'Tourism Official' }); // Mock user
 
   useEffect(() => {
     // Simulate loading
@@ -291,19 +291,18 @@ const Dashboard = () => {
                   </span>
                   {tabs.find(tab => tab.id === activeTab)?.label} Dashboard
                 </h1>
-                <p className="text-gray-600">Welcome back, {displayName}! Here's your comprehensive overview.</p>
               </div>
-              
+
               <div className="flex items-center space-x-4">
                 <div className="flex items-center space-x-2 bg-emerald-50 px-4 py-2 rounded-xl">
                   <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
                   <span className="text-sm font-medium text-emerald-700">Live</span>
                 </div>
-                
+
                 <button className="p-3 bg-white/50 backdrop-blur-sm rounded-xl border border-white/20 hover:bg-white/70 transition-all duration-300">
                   <span className="text-xl">🔔</span>
                 </button>
-                
+
                 <button className="px-6 py-3 bg-gradient-to-r from-emerald-500 to-teal-600 text-white rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5">
                   Export Data
                 </button>
