@@ -1,7 +1,6 @@
 import React, { useState, useRef, Suspense } from 'react';
-import { Canvas, useFrame, useThree } from '@react-three/fiber';
+import { Canvas, useThree } from '@react-three/fiber';
 import { OrbitControls, Text, Sphere, Box, Environment, Float, Stars } from '@react-three/drei';
-import * as THREE from 'three';
 
 // VR Scene Component
 const VRScene = ({ selectedExperience }) => {

@@ -72,22 +72,7 @@ const LoadingSpinner = () => (
   </Html>
 );
 
-// Error Fallback Component
-const ErrorFallback = ({ error }) => (
-  <div className="flex items-center justify-center h-full text-white">
-    <div className="text-center">
-      <div className="text-6xl mb-4">⚠️</div>
-      <h3 className="text-2xl font-bold mb-2">VR Loading Error</h3>
-      <p className="text-gray-300 mb-4">Unable to load the VR experience</p>
-      <button
-        onClick={() => window.location.reload()}
-        className="px-6 py-3 bg-emerald-500 text-white rounded-xl font-semibold hover:bg-emerald-600 transition-colors"
-      >
-        Retry
-      </button>
-    </div>
-  </div>
-);
+
 
 // Main VR Component
 const VRCanvas = ({ imageUrl, isVRSupported, onEnterVR }) => {
@@ -157,7 +142,6 @@ const VRCanvas = ({ imageUrl, isVRSupported, onEnterVR }) => {
 // Main HundruVR Component
 const HundruVR = () => {
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
   const [isVRSupported, setIsVRSupported] = useState(false);
   const [fadeIn, setFadeIn] = useState(false);
 
@@ -198,10 +182,6 @@ const HundruVR = () => {
   const handleBack = () => {
     window.history.back();
   };
-
-  if (error) {
-    return <ErrorFallback error={error} />;
-  }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 relative overflow-hidden pt-16">
